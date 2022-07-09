@@ -447,7 +447,7 @@
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
                             <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                -后端
+                                后端
                             </a>
                         
                     </div>
@@ -539,18 +539,18 @@
 <li>大驼峰输入法（所有首字母都大写）</li>
 <li>英文</li>
 </ul>
-<h3 id="变量计算"><a href="#变量计算" class="headerlink" title="变量计算"></a>变量计算</h3><h4 id="加减乘除"><a href="#加减乘除" class="headerlink" title="加减乘除"></a>加减乘除</h4><pre class="line-numbers language-none"><code class="language-none">如果参与运算的类型不一样，则自动转化为相同类型
-char\byte\short--int--long--float-doubleint*long=long*long    
-byte、char、short 在参与运算时，一律为int计算结果会溢出
-溢出不会报错，自动重新填(最大值加1为最小值) 
+<h3 id="变量计算"><a href="#变量计算" class="headerlink" title="变量计算"></a>变量计算</h3><h4 id="加减乘除"><a href="#加减乘除" class="headerlink" title="加减乘除"></a>加减乘除</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">如果参与运算的类型不一样，则自动转化为相同类型
+<span class="token keyword">char</span>\<span class="token keyword">byte</span>\<span class="token keyword">short</span><span class="token operator">--</span><span class="token keyword">int</span><span class="token operator">--</span><span class="token keyword">long</span><span class="token operator">--</span><span class="token keyword">float</span><span class="token operator">-</span>doubleint<span class="token operator">*</span><span class="token keyword">long</span><span class="token operator">=</span><span class="token keyword">long</span><span class="token operator">*</span><span class="token keyword">long</span>    
+<span class="token keyword">byte</span>、<span class="token keyword">char</span>、<span class="token keyword">short</span> 在参与运算时，一律为<span class="token keyword">int</span>计算结果会溢出
+溢出不会报错，自动重新填<span class="token punctuation">(</span>最大值加<span class="token number">1</span>为最小值<span class="token punctuation">)</span> 
 
-byte b1 = 5;
-byte b2 = 6;
-byte b3 = (byte)(b1+b2);
+<span class="token keyword">byte</span> b1 <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token keyword">byte</span> b2 <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+<span class="token keyword">byte</span> b3 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token punctuation">(</span>b1<span class="token operator">+</span>b2<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-System.out.println(2+2);     //4
-System.out.println(2+'2');   //52，2加上'2'的码50
-System.out.println('2'+'2'); //100，'2'的码50，加上'2'的码50<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">//4</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">+</span><span class="token char">'2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//52，2加上'2'的码50</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token char">'2'</span><span class="token operator">+</span><span class="token char">'2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//100，'2'的码50，加上'2'的码50</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="变量取值最大数"><a href="#变量取值最大数" class="headerlink" title="变量取值最大数"></a>变量取值最大数</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> max <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span>MAX_VALUE<span class="token punctuation">;</span>
     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>max<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -1039,18 +1039,17 @@ a <span class="token operator">=</span> <span class="token class-name">Arrays</s
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/07/01/java-ji-chu-yu-fa/">
+                <a href="/2022/07/01/ji-suan-ji-wang-luo-zi-ding-er-xia-de-fang-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="java基础语法">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="计算机网络(概述、应用层、运输层)">
                         
-                        <span class="card-title">java基础语法</span>
+                        <span class="card-title">计算机网络(概述、应用层、运输层)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1060,27 +1059,26 @@ a <span class="token operator">=</span> <span class="token class-name">Arrays</s
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-01
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    -后端
+                            <a href="/categories/%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/" class="post-category">
+                                    理论知识
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/%E8%AE%A1%E7%BD%91/">
+                        <span class="chip bg-color">计网</span>
                     </a>
                     
                 </div>
@@ -1118,7 +1116,7 @@ a <span class="token operator">=</span> <span class="token class-name">Arrays</s
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
                             <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
-                                    -数据结构
+                                    数据结构
                                 </a>
                             
                             
@@ -1128,8 +1126,8 @@ a <span class="token operator">=</span> <span class="token class-name">Arrays</s
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                        <span class="chip bg-color">数据结构</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B2%97%E6%B5%8F/">
+                        <span class="chip bg-color">数据结构粗浏</span>
                     </a>
                     
                 </div>
@@ -1272,7 +1270,7 @@ a <span class="token operator">=</span> <span class="token class-name">Arrays</s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">3.2k</span>
+                        class="white-color">15k</span>
             
             
             

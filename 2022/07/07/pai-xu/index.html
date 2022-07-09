@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="我的第一篇博客, HyyBlog">
-    <meta name="description" content="">
+    <meta name="keywords" content="排序, HyyBlog">
+    <meta name="description" content="几种慢速排序方法冒泡排序冒泡排序的思想主要是交换排序
+**基本思想:**两两比较相邻记录的关键字,如果反序就交换,直到没有反序的记录为止
+**时间复杂度:**O(n2)      最小值n-1次查找      最大值n(n-1)/2次查找且">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +21,7 @@
 
     
 
-    <title>我的第一篇博客 | HyyBlog</title>
+    <title>排序 | HyyBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">我的第一篇博客</h1>
+                    <h1 class="description center-align post-title">排序</h1>
                 </div>
             </div>
         </div>
@@ -430,12 +432,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B2%97%E6%B5%8F/">
+                                <span class="chip bg-color">数据结构粗浏</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                数据结构
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -444,28 +459,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-29
+                    2022-07-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-06-29
+                    2022-07-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -488,7 +503,114 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="几种慢速排序方法"><a href="#几种慢速排序方法" class="headerlink" title="几种慢速排序方法"></a>几种慢速排序方法</h1><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>冒泡排序的思想主要是交换排序</p>
+<p>**基本思想:**两两比较相邻记录的关键字,如果反序就交换,直到没有反序的记录为止</p>
+<p>**时间复杂度:**O(n<sup>2</sup>)      最小值n-1次查找      最大值n(n-1)/2次查找且做等量级移动</p>
+<h2 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h2><p>简单选择排序(Smple Selection Sort)就是通过<strong>n-i次关键字间</strong>的比较,从n-i+1个记录中选择出关键词最小的记录,并和第i个记录进行交换 ( 1&lt;= i &lt;=n )</p>
+<p>**时间复杂度:**O(n<sup>2</sup>), </p>
+<p>比较次数恒定为n(n-1)/2</p>
+<p>交换次数最小为0，最大为n-1</p>
+<p>复杂度相对于冒泡排序略低  </p>
+<h2 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h2><p>直接插入排序就是将一个记录插入已经排好序的有序表中,从而得到一个新的、记录数＋1的有序表</p>
+<p><strong>时间复杂度：</strong>O(n<sup>2</sup>)</p>
+<p>平均的比较和移动次数为<strong>n<sup>2</sup>/2</strong>，性能高于直接插入和冒泡</p>
+<h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><p>先简单介绍下<strong>基本有序</strong>：最小的关键词基本在前面，不大不小的基本在中间，最大的基本在后面</p>
+<p>因此我们采用<strong>跳跃分割</strong>的策略：将相距某个<strong>增量</strong>的记录组成一个子序列，在子序列进行插入排序后就是基本有序，使得排序效率提高。</p>
+<p>性能主要取决于<strong>增量</strong>的值，研究指出为dlta[k]=2<sup>t-k+1</sup>-1（0&lt;=k&lt;=t&lt;=log<sub>2</sub>(n+1)）时效率较高,<strong>时间复杂度：</strong>O(n<sup>3/2</sup>)</p>
+<h2 id="堆积法"><a href="#堆积法" class="headerlink" title="堆积法"></a>堆积法</h2><p>堆是具有下列性质的完全二叉树</p>
+<ul>
+<li>每个结点的值都大于或者等于其左右孩子结点的值，成为大顶堆</li>
+<li>每个结点的值都小于或者等于其左右孩子结点的值，成为小顶堆</li>
+</ul>
+<h3 id="堆排序算法"><a href="#堆排序算法" class="headerlink" title="堆排序算法"></a>堆排序算法</h3><p>以大顶堆为例子</p>
+<ul>
+<li>将待排序数组构成一个大顶堆，将顶端结点和堆数组末尾互换</li>
+<li>将剩余的n-1个序列重新构成一个大顶堆，得到n-1中的次大值</li>
+<li>重复上述</li>
+</ul>
+<p>问题在于<strong>大顶堆的构建</strong>和<strong>剩余元素重构大顶堆</strong></p>
+<p>具体算法略过，讨论一下算法的复杂度</p>
+<ul>
+<li><p>堆构建的时间复杂度复杂度为：<em><strong>O（n）</strong></em></p>
+</li>
+<li><p>单次重构的时间复杂度为：<em><strong>O（logi）</strong></em>，堆顶获取n-1次。</p>
+<p>总体花费：<em><strong>O（nlogn）</strong></em></p>
+</li>
+</ul>
+<p>综上堆排序时间为<em><strong>O（nlogn）</strong></em></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>堆排序空间占用较高，但是排序依旧不够稳定（记录的跳跃性），不适合待排序序列较少的情况</p>
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><p>2路归并排序的原理是</p>
+<ul>
+<li>假设初始序列有n个记录，则可以看成是n个有序的子序列，每个子序列长度为1</li>
+<li>然后两两归并，得到 n/2 个长度为2 或者为 1 的有序子序列</li>
+<li>重复两两并归</li>
+</ul>
+<p><strong>复杂度分析</strong></p>
+<p>时间复杂度：<em><strong>O（nlogn）</strong></em></p>
+<p>空间复杂度：<em><strong>O（n+logn）</strong></em>  递归情况</p>
+<p>​						<em><strong>O（n）</strong></em>  非递归情况   因此最好使用非递归算法</p>
+<p>属于比较占用内存但是效率高且稳定的算法</p>
+<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><p>快速排序属于从冒泡排序进阶而来</p>
+<p>快速排序的思想：</p>
+<p>通过一趟排序将待排记录分割为两部分，一部分的关键字比另一部分小，将这两部分记录继续进行排序。</p>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">QuickSort</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">quickSort</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span><span class="token keyword">int</span> low<span class="token punctuation">,</span><span class="token keyword">int</span> high<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> i<span class="token punctuation">,</span>j<span class="token punctuation">,</span>temp<span class="token punctuation">,</span>t<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>low<span class="token operator">&gt;</span>high<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        i<span class="token operator">=</span>low<span class="token punctuation">;</span>
+        j<span class="token operator">=</span>high<span class="token punctuation">;</span>
+        <span class="token comment">//temp就是基准位</span>
+        temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>low<span class="token punctuation">]</span><span class="token punctuation">;</span>
+ 
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>i<span class="token operator">&lt;</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">//先看右边，依次往左递减</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>temp<span class="token operator">&lt;=</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">&amp;&amp;</span>i<span class="token operator">&lt;</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                j<span class="token operator">--</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">//再看左边，依次往右递增</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>temp<span class="token operator">&gt;=</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&amp;&amp;</span>i<span class="token operator">&lt;</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                i<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">//如果满足条件则交换</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i<span class="token operator">&lt;</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                t <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> t<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+ 
+        <span class="token punctuation">}</span>
+        <span class="token comment">//最后将基准为与i和j相等位置的数字交换</span>
+         arr<span class="token punctuation">[</span>low<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+         arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+        <span class="token comment">//递归调用左半数组</span>
+        <span class="token function">quickSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> low<span class="token punctuation">,</span> j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//递归调用右半数组</span>
+        <span class="token function">quickSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> high<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+ 
+ 
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">62</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token function">quickSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> arr<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="算法复杂度"><a href="#算法复杂度" class="headerlink" title="算法复杂度"></a>算法复杂度</h2><p>时间复杂度:</p>
+<p>最好的情况 	<em><strong>O（n）</strong></em></p>
+<p>最坏的情况 	<em><strong>O（n<sup>2</sup>）</strong></em></p>
+<p>平均时间复杂度为 <em><strong>O（nlog<sub>2</sub>n）</strong></em></p>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ul>
+<li>将快速排序的递归实施尾递归优化</li>
+<li>优化选取中间值的方法(三数取中、九数取中)</li>
+<li>小数组是，high或者low的值小于7（也有资料显示50），使用直接插入求解</li>
+<li>优化不必要的交换</li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -504,7 +626,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Hyy</a>
+                    <a href="/about" rel="external nofollow noreferrer">hyy</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -514,7 +636,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hyflosaqer.github.io/2022/06/29/wo-de-di-yi-pian-bo-ke/">https://hyflosaqer.github.io/2022/06/29/wo-de-di-yi-pian-bo-ke/</a>
+                    <a href="https://hyflosaqer.github.io/2022/07/07/pai-xu/">https://hyflosaqer.github.io/2022/07/07/pai-xu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -527,7 +649,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Hyy</a>
+                    <a href="/about" target="_blank">hyy</a>
                     !
                 </span>
             </div>
@@ -551,7 +673,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B2%97%E6%B5%8F/">
+                                    <span class="chip bg-color">数据结构粗浏</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -723,17 +849,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/07/01/xian-xing-suo-yin-cha-zhao/">
+                <a href="/2022/07/07/pai-xu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="数据结构_查找">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="排序">
                         
-                        <span class="card-title">数据结构_查找</span>
+                        <span class="card-title">排序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -743,9 +870,59 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-01
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B2%97%E6%B5%8F/">
+                        <span class="chip bg-color">数据结构粗浏</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/07/05/san-lie-cha-zhao-biao-ha-xi-biao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="散列查找表(哈希表)">
+                        
+                        <span class="card-title">散列查找表(哈希表)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -766,44 +943,6 @@
                     </a>
                     
                 </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/06/29/wo-de-di-yi-pian-bo-ke/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="我的第一篇博客">
-                        
-                        <span class="card-title">我的第一篇博客</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-29
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Hyy
-                            
-                        </span>
-                    </div>
-                </div>
-
                 
             </div>
         </div>
