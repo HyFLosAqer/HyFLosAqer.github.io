@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>浅谈redis</title>
+      <link href="/2022/08/09/qian-tan-redis/"/>
+      <url>/2022/08/09/qian-tan-redis/</url>
+      
+        <content type="html"><![CDATA[<h1 id="浅谈redis"><a href="#浅谈redis" class="headerlink" title="浅谈redis"></a>浅谈redis</h1><p>一种分布式内存数据库，相当于一套运行在内存里面的某种通用存储模块(NoSQL,即不需要SQL语句的数据库)</p><p>因为在内存之中，所以不需要sql需要通过非常复杂的方法才可以<strong>实现高效搜索</strong>，底层维持单线程，同时也可以进行一些相对比较复杂的操作和使用相对比较复杂的<strong>数据模型</strong>（例如管道命令应对抢购秒杀问题）；同时事务处理和复杂联表查询功能缺失</p><p>数据本质上存储在一个map里面，里面的value却又支持各种数据类型，也可以对此数据结构有相对复杂的操作，例如链表左右push、pop等操作</p><p>内部以16383个哈希槽存储数据,利用CRC16计算出code再取余,同时可以使用主从复制实现集群,进行<strong>读写分离</strong>、<strong>分片工作</strong>、<strong>主从切换</strong>（配置单数哨兵服务器集群）</p><blockquote><p>值得一提的是（有待勘误）</p><p>关系型数据库（例如mysql）主从分离进行的是master增删改，slave从查</p><p>非关系型数据库（例如redis）主从分离进行的是master增删改查，slave从查；尤其是redis3集群甚至是主从平等</p><p>也许是性能差异，非关系型内存占用多，性能普遍大，可以承担起更多的工作</p></blockquote><p><strong>特性</strong></p><ul><li><p>单线程（实际上加的是分布式的锁），可以通过单个服务器开启一个集群,单个集群中包含多个节点提高效率</p></li><li><p>支持数据库落地,拥有故障恢复模式(RDB和AOF)</p></li><li><p>支持类型丰富: String、hash(map)、list、set、zset</p></li><li><p>缓存空间：String 512m 、hash 2<sup>32</sup></p><blockquote><p>比较流行value的存放序列化方式为protobuf，除开肉眼不可读以外(结构数据化)，几乎没有其他缺点（数据序列化：跨语言多平台、高效、拓展兼容性好）。</p><p>key一般为String</p></blockquote></li></ul><h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ul><li>需要高频率的读取</li><li>不大关注数据的一致性、及时性</li><li>对数据的修改请求比较少</li></ul><h2 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h2><p>黑客故意去请求缓存中不存在的数据，导致所有的请求都积压到数据库中</p><p><strong>解决方案</strong></p><ul><li><p>利用互斥锁，没得到锁就休眠一定时间，缓存失效时先去获得锁再请求数据库</p></li><li><p>采用异步更新策略，无论key值是否取到值，都直接返回。</p><p>value值中维护一个失效时间，如果缓存过期，异步起一个线程去读数据库</p><p>需要缓存预热（项目启动先加载缓存）操作</p></li><li><p>布隆过滤器，内部维护一系列合法的key，如果收到不合法的key，直接返回</p></li></ul><h2 id="雪崩问题"><a href="#雪崩问题" class="headerlink" title="雪崩问题"></a>雪崩问题</h2><p>缓存同时间大面积失效（setKey的时候设置的过期时间），同时收到一大波请求直接访问数据库，引起数据库异常</p><p><strong>解决方案</strong></p><ul><li><p>缓存失效时间设置随机值</p></li><li><p>使用互斥锁（会引起性能下降）</p></li><li><p>双缓存 A和B</p><ul><li>缓存A设置失效时间为20min，缓存B不设置失效时间</li><li>实现过程中先从A读取数据，有则直接返回</li><li>没有则从B读取数据，直接返回，同时异步开启一个更新线程，更新线程同时更新缓存A和缓存B</li></ul></li></ul><h2 id="持久化-数据恢复"><a href="#持久化-数据恢复" class="headerlink" title="持久化(数据恢复)"></a>持久化(数据恢复)</h2><p>redis内部也有持久化方案,,可以将当前redis内存内部的数据保存到硬盘上,也属于一种数据保险 ,数据恢复策略</p><p>具有两种策略</p><ul><li><p>RGD:(Redis Database backup)  数据库快照</p><p>将当前所有数据转换成二进制对象,且保存再硬盘上,默认生成dump.rdb文件</p><p>在断电时回复上一次的信息</p><blockquote><p>配置文件 修改信息:</p><p>save 60 5 (一分钟内有5个key被修改即使用快照)</p></blockquote></li><li><p>AOF</p><p>保存运行的命令日志,理论上可以断电回复所有数据</p><p>但是高频率IO过于影响性能,往往采取一定时间保存一次日志,进行一次IO(比如1min)</p><p>支持<code>AOf rewrite</code>: 删除冗余的指令日志</p><blockquote><p>配置文件 修改信息:</p><p>appendonly yes</p></blockquote></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 中间键 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>leetCode8字符串转换整数</title>
       <link href="/2022/08/03/leetcode8-zi-fu-chuan-zhuan-huan-zheng-shu/"/>
       <url>/2022/08/03/leetcode8-zi-fu-chuan-zhuan-huan-zheng-shu/</url>
